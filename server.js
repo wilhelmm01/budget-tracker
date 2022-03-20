@@ -16,18 +16,18 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+// mongoose.connect(MONGODB_URI, {
+//   useNewUrlParser: true,
+//   useFindAndModify: false
+// });
 
-// mongoose.connect(
-//     MONGODB_URI,
-//     async(err)=>{
-//         if(err) throw err;
-//         console.log("conncted to db")
-//     }
-// )
+mongoose.connect(
+    MONGODB_URI,
+    async(err)=>{
+        if(err) throw err;
+        console.log("conncted to db")
+    }
+)
 
 // routes
 app.use(require("./routes/api.js"));
